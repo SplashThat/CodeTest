@@ -4,6 +4,7 @@ Your goal is to create a simple event management app. The requirements are as fo
 * There shall be an event dashboard showing all of my events
 * There shall be a way to add new events
 * There shall be a way for a guest to rsvp to an event
+* The event dashboard shall show a count of current attendees.
 * The event dashboard should list the event `title`, `start_time`, and `end_time`
 * If an event does not have a `start_time` it should be listed as `TBD` (To Be Determined)
 * One should be able to easily see the event in groups of `Upcoming`, `Past`, and `TBD`.
