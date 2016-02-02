@@ -25,14 +25,14 @@ port: 3306
 ```
 
 ## Set up
-  ### Requirements
+### Requirements
     * docker-machine (if on a mac)
     * docker
     * docker-compose
 
   For more info on setting up docker, click [here](https://docs.docker.com/)
 
-  ### Steps
+### Steps
   To bring up the LAMP stack (nginx, php, mysql), run the following command from the root of the `SplashCodeTest` directory
   ```
   docker-compose up -d
