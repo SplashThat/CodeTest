@@ -8,11 +8,13 @@ Your goal is to create a simple event management app. The requirements are as fo
 * If an event does not have a `start_time` it should be listed as `TBD` (To Be Determined)
 * One should be able to easily see the event in groups of `Upcoming`, `Past`, and `TBD`.
 * The table should be sortable by `Title`, and `start_time`, with `TBD` events taking precedence.
+
 ### Bonus points
 For extra awesome-points, the dashboard should be updated in real-time when anyone makes an update (adds an event, a guest rsvp's to the event, etc...)
 
 *Feel free to use any tools or frameworks you like!*
 
+## Database
 Your database will come with a super simple schema just to get  you started. To connect to the database, use the following credentials:
 ```
 database_name: SplashCodeTest
