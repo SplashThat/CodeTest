@@ -5,6 +5,7 @@ Your goal is to create a simple event management app. The requirements are as fo
 * There shall be a way to add new events
 * There shall be a way for a guest to rsvp to an event
 * The event dashboard shall show a count of current attendees.
+* The fields should properly handle unicode characters (in case my name is Señor Tacos)
 * The event dashboard should list the event `title`, `start_time`, and `end_time`
 * If an event does not have a `start_time` it should be listed as `TBD` (To Be Determined)
 * One should be able to easily see the event in groups of `Upcoming`, `Past`, and `TBD`.
@@ -18,7 +19,7 @@ For extra awesome-points, the dashboard should be updated in real-time when anyo
 When you're ready to submit, just create a new pull request
 
 ## Database
-Your database will come with a super simple schema just to get you started. Note that to successfully fulfill all of the requirements, you will need to add columns and/or tables. Feel free to just supply the updated sql dump, or if you're feeling fancy, write a migration.
+Your database will come with a super simple schema just to get you started. If you make any changes to the database, feel free to just supply the updated sql dump; if you're feeling fancy, write a migration.
 
 To connect to the database, use the following credentials:
 ```
