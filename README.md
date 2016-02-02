@@ -14,8 +14,12 @@ For extra awesome-points, the dashboard should be updated in real-time when anyo
 
 *Feel free to use any tools or frameworks you like!*
 
+When you're ready to submit, just create a new pull request
+
 ## Database
-Your database will come with a super simple schema just to get  you started. To connect to the database, use the following credentials:
+Your database will come with a super simple schema just to get you started. Note that to successfully fulfill all of the requirements, you will need to add columns and/or tables. Feel free to just supply the updated sql dump, or if you're feeling fancy, write a migration.
+
+To connect to the database, use the following credentials:
 ```
 database_name: SplashCodeTest
 database_user: splash
