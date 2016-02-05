@@ -10,10 +10,6 @@ db:
   volumes:
     - "./:docker-entrypoint-initdb.d"
 
-swagger:
-	image: swaggerapi/swagger-editor
-	ports:
-	  - "8080:8080"
 web:
   image: nginx
   volumes:
