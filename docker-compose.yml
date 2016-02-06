@@ -11,10 +11,18 @@ db:
     - "./:docker-entrypoint-initdb.d"
 
 web:
-  image: nginx
+  build: .
   volumes:
-    - "./html:/usr/share/nginx/html:ro"
+    - "./html:/usr/share/nginx/html"
   links:
     - db
+    - fpm
   ports:
     - "8080:80"
+
+fpm:
+    image: php:fpm
+    ports:
+        - ":9000"
+    volumes:
+        - ./html:/usr/share/nginx/html
