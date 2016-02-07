@@ -16,7 +16,7 @@ For extra awesome-points, the dashboard should be updated in real-time when anyo
 
 *Feel free to use any tools or frameworks you like!*
 
-When you're ready to submit, just create a new pull request
+When you're ready to submit, zip up your code and email it back to us.
 
 ## Database
 Your database will come with a super simple schema just to get you started. If you make any changes to the database, feel free to just supply the updated sql dump; if you're feeling fancy, write a migration.
