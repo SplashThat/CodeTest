@@ -7,8 +7,6 @@ db:
     MYSQL_USER: splash
     MYSQL_PASSWORD: splash
     MYSQL_DATABASE: SplashCodeTest
-  volumes:
-    - "./:docker-entrypoint-initdb.d"
 
 web:
   build: .
