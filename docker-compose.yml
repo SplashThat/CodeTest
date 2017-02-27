@@ -11,7 +11,7 @@ db:
 web:
   build: .
   volumes:
-    - "./html:/var/www/html"
+    - "./www:/www"
   links:
     - db
   ports:

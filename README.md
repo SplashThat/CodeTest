@@ -1,4 +1,7 @@
 # Splash Code Test
+
+## Assignment
+
 Your goal is to create a simple event management app. The requirements are as follows:
 
 * There shall be an event dashboard showing all of my events
@@ -11,45 +14,49 @@ Your goal is to create a simple event management app. The requirements are as fo
 * One should be able to easily see the event in groups of `Upcoming`, `Past`, and `TBD`.
 * The table should be sortable by `Title`, and `start_time`, with `TBD` events taking precedence.
 
+Feel free to use any tools or frameworks you like!
+
 ### Bonus points
-For extra awesome-points, the dashboard should be updated in real-time when anyone makes an update (adds an event, a guest rsvp's to the event, etc...)
-
-*Feel free to use any tools or frameworks you like!*
-
-When you're ready to submit, zip up your code and email it back to us.
+For extra awesome-points, the dashboard should be updated in real-time when anyone makes an update (adds an event, a guest RSVPs to the event, etc...)
 
 ## Database
-Your database will come with a super simple schema just to get you started. If you make any changes to the database, feel free to just supply the updated sql dump; if you're feeling fancy, write a migration.
+We have provided a simple SQL schema file to get you started. You should import the schema file into the database created as part of the setup.
 
-To connect to the database, use the following credentials:
-```
-database_name: SplashCodeTest
-database_user: splash
-database_password: splash
-root_password: splash
-port: 3306
-```
+If you make any changes to the database, feel free to just supply the updated SQL dump; if you're feeling fancy, you may write a migration.
 
-## Set up
-### Requirements
-    * docker-machine (if on a mac)
-    * docker
-    * docker-compose
+## Submitting
+When you're ready to submit, zip up your code and email it back to us.
 
-  For more info on setting up docker, click [here](https://docs.docker.com/)
+# Set up
+1. Install Docker for your operating system: [OSX](https://docs.docker.com/docker-for-mac/install/), [Windows](https://docs.docker.com/docker-for-windows/install/), or Linux.
+2. Clone this repository.
+3. In Terminal, go into the cloned repository and run `docker-compose up -d`
+    * This will download the Docker images and run the install
+4. Run `docker ps` and you should see two containers running: one for web, one for db.
+5. Go to `http://127.0.0.1:8080` in your browser and you should see `index.html` in the `www` folder.
 
-### Steps
-  To bring up the LAMP stack (nginx, php, mysql), run the following command from the root of the `SplashCodeTest` directory
-  ```
-  docker-compose up -d
-  ```
-  The `html` directory will be mounted to the docker container and all your code should be placed in it.
+## To access the database
+In your favorite MySQL browsing application (we recommend Sequel Pro for OSX and HeidiSQL for Windows), use the following credentials:
 
-  To view your page
-  ```
-  http://<docker-machine-ip>:8080
-  ```
-  If you're on a mac, your docker-machine IP is probably something like `192.168.99.100`. You could also run the following to find your `docker-machine` ip.
-  ```
-  docker-machine ip default
-  ```
+| Property     | Value          |
+|--------------|----------------|
+| Host         | 127.0.0.1      |
+| Username     | splash         |
+| Password     | splash         |
+| Port         | 3306           |
+| DatabaseName | SplashCodeTest |
+
+## To develop
+Add all your code into the `www` folder.
+
+When configuring your code, use a database host of `db` (rather than 127.0.0.1).
+
+If you need to get into the container (for example, to run `composer install`), run the following in your Terminal: `docker exec -it codetest_web_1 /bin/sh`. You will be in the `/www` folder which is mounted to the `www` folder you have been developing in.
+
+Composer is already installed inside the Docker container, so once you connect to the container, you can run `composer` to do whatever is necessary.
+
+## Changes for frameworks
+If you need to make a change for a framework - for example, changing the root public folder:
+
+1. Edit `docker/nginx.conf` and change the `root` paths on lines 44 and 51
+2. From your local Terminal, run `docker-compose build` and `docker-compose up -d` to update the container
